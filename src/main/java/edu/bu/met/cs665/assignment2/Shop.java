@@ -15,7 +15,7 @@ public class Shop extends DeliverySystem {
 
   public void addOrder(Order order) {
     this.orders.add(order);
-    notifyDriver(new DeliveryRequest(order));
+    notifyDrivers(new DeliveryRequest(order));
   }
 
   public void addCustomer(Customer customer) {

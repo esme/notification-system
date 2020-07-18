@@ -1,7 +1,21 @@
-# Project Template
+# Delivery Application - Notification System Project
 
-This is a Java Maven Project Template
+A consortium of shops in a large city has established an agreement with local independent van and taxi drivers to deliver products from city shops to customer destinations.
 
+This project implements a notification system to send notifications about delivery requests to drivers.
+When a store gets a product delivery, orders are created at the store, and a delivery request is broadcasted to all drivers.
+
+# Software design concepts
+
+- Flexible implementation.
+
+- Allows for simplicity and understandability.
+
+- Avoids duplicated code.
+
+# UML Class Diagram
+
+![Class Diagram](assignment2_uml.jpg)
 
 # How to compile the project
 

@@ -26,4 +26,6 @@ public class DeliveryRequest {
   }
 
   public DeliveryStatus getDeliveryStatus() { return this.deliveryStatus; }
+
+  public void changeDeliveryStatus(DeliveryStatus deliveryStatus) { this.deliveryStatus = deliveryStatus; }
 }

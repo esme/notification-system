@@ -21,4 +21,16 @@ public class Shop extends DeliverySystem {
   public void addCustomer(Customer customer) {
     this.customers.add(customer);
   }
+
+  public List<Order> getOrders() {
+    return this.orders;
+  }
+
+  public List<Customer> getCustomers() {
+    return this.customers;
+  }
+
+  public void notifyCustomer(Customer customer, DeliveryRequest deliveryRequest) {
+    customer.update(deliveryRequest);
+  }
 }

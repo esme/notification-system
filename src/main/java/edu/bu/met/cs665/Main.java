@@ -32,28 +32,6 @@ public class Main {
 //    logger.warn("Warn Message!");
 //    logger.error("Error Message!");
 //    logger.fatal("Fatal Message!");
-
-    // create new shop and customer
-    Shop shop = new Shop();
-    Customer customer = new Customer("john", "boston");
-
-    // create new order
-    Order order = new Order("1", shop, customer, "package1");
-    shop.addOrder(order);
-
-    // add 5 drivers
-    shop.addDriver(new Driver("A"));
-    shop.addDriver(new Driver("B"));
-    shop.addDriver(new Driver("C"));
-    shop.addDriver(new Driver("D"));
-    shop.addDriver(new Driver("E"));
-
-    // create delivery request
-    DeliveryRequest deliveryRequest = new DeliveryRequest(order);
-    shop.addDeliveryRequest(deliveryRequest);
-
-    // notify drivers
-    shop.notifyDriver(deliveryRequest);
   }
 
 

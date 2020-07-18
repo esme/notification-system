@@ -11,4 +11,5 @@ import java.util.Map;
 
 interface Observer {
   void update(DeliveryRequest deliveryRequest);
+  DeliveryRequest getLatestDeliveryRequest();
 }

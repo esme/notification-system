@@ -21,7 +21,7 @@ public class DeliverySystem {
     return this.deliveryRequests;
   }
 
-  public void notifyDriver(DeliveryRequest deliveryRequest) {
+  public void notifyDrivers(DeliveryRequest deliveryRequest) {
     for (Observer driver: drivers) {
       driver.update(deliveryRequest);
     }
@@ -33,5 +33,9 @@ public class DeliverySystem {
 
   public void removeDriver(Driver driver) {
     this.drivers.remove(driver);
+  }
+
+  public List<Driver> getDrivers() {
+    return this.drivers;
   }
 }

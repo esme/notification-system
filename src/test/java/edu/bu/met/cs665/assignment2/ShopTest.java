@@ -23,10 +23,10 @@ public class ShopTest {
   public void init() {
     // create new shop and customer
     shop = new Shop();
-    customer = new Customer("john", "boston");
+    customer = new Customer("John", "Boston");
 
     // create new order
-    order = new Order("1", shop, customer, "package1");
+    order = new Order("pkg1", customer);
     shop.addOrder(order);
 
     // add 5 drivers
@@ -74,7 +74,7 @@ public class ShopTest {
 
   @Test
   public void testAddDeliveryRequest() {
-    assertEquals(shop.getDeliveryRequests().get("1"), deliveryRequest);
+    assertEquals(shop.getDeliveryRequests().get("pkg1"), deliveryRequest);
   }
 
   @Test

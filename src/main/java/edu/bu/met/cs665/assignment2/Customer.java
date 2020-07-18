@@ -1,4 +1,5 @@
 package edu.bu.met.cs665.assignment2;
+
 /**
  * This Class represents a Customer.
  *
@@ -16,16 +17,23 @@ public class Customer implements Observer {
     this.address = address;
   }
 
-  public String getName() { return this.name; }
-
   public String getAddress() {
     return this.address;
   }
 
+  /**
+   * update method to get updated.
+   */
   public void update(DeliveryRequest deliveryRequest) {
     this.latestDeliveryRequest = deliveryRequest;
-    System.out.print(this.getName() + ": [" + deliveryRequest.getId() + "]: ");
-    System.out.print(" Status Change [" + deliveryRequest.getDeliveryStatus() + "] ");
+    String template = "Customer %s: Status update: %s [%s]";
+    String message = String.format(
+        template,
+        this.name,
+        deliveryRequest.getId(),
+        deliveryRequest.getDeliveryStatus()
+    );
+    System.out.println(message);
   }
 
   public DeliveryRequest getLatestDeliveryRequest() {

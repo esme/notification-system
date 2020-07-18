@@ -1,6 +1,9 @@
 package edu.bu.met.cs665.assignment2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This Class represents a DeliverySystem (Subject).
@@ -21,6 +24,9 @@ public class DeliverySystem {
     return this.deliveryRequests;
   }
 
+  /**
+   * notifies all drivers.
+   */
   public void notifyDrivers(DeliveryRequest deliveryRequest) {
     for (Observer driver: drivers) {
       driver.update(deliveryRequest);

@@ -1,13 +1,14 @@
 package edu.bu.met.cs665.assignment2;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This Class represents a Shop.
  *
  * @author Esme
  *
  */
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Shop extends DeliverySystem {
   private List<Order> orders = new ArrayList<>();

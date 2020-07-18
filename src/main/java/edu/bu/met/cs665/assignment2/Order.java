@@ -1,4 +1,5 @@
 package edu.bu.met.cs665.assignment2;
+
 /**
  * This Class represents an Order.
  *
@@ -8,15 +9,11 @@ package edu.bu.met.cs665.assignment2;
 
 public class Order {
   private String id;
-  private Shop shop;
   private Customer customer;
-  private String product;
 
-  public Order(String id, Shop shop, Customer customer, String product) {
+  public Order(String id, Customer customer) {
     this.id = id;
-    this.shop = shop;
     this.customer = customer;
-    this.product = product;
   }
 
   public String getId() {

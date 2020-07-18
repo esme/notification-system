@@ -16,10 +16,15 @@ public class Driver implements Observer {
     this.name = name;
   }
 
+  /**
+   * update method to get updated.
+   */
   public void update(DeliveryRequest deliveryRequest) {
     latestDeliveryRequest = deliveryRequest;
-    System.out.print(this.name + ": New delivery request [" + deliveryRequest.getId() + "] ");
-    System.out.print("to [" + deliveryRequest.getAddress() + "]\n");
+    String template = "Driver %s: New delivery request: %s to %s";
+    String message = String.format(template, this.name, deliveryRequest.getId(),
+        deliveryRequest.getAddress());
+    System.out.println(message);
   }
 
   public void acceptDeliveryRequest(DeliveryRequest deliveryRequest) {

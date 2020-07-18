@@ -1,4 +1,5 @@
 package edu.bu.met.cs665.assignment2;
+
 /**
  * This "Class" represents the delivery statuses.
  *

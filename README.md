@@ -3,19 +3,37 @@
 A consortium of shops in a large city has established an agreement with local independent van and taxi drivers to deliver products from city shops to customer destinations.
 
 This project implements a notification system to send notifications about delivery requests to drivers.
-When a store gets a product delivery, orders are created at the store, and a delivery request is broadcasted to all drivers.
+When a store gets a product delivery, the store creates an order for a customer, and broadcasts a delivery request to all drivers.
 
 # Software design concepts
+The Observer Pattern Structure
 
-- Flexible implementation.
+![Class Diagram](observer_pattern.png)
 
-- Allows for simplicity and understandability.
+```
+Subject: DeliverySystem
+ConcreteSubject: Shop
+Observer: Observer
+ConcreteObserver: Customer, Driver
+```
 
-- Avoids duplicated code.
+- This kind of interaction in observer pattern is also known as publish-subscribe (Pub/Sub).
+Whenever there are any updates, we push the new events from the publisher to subscribers.
+
+- The Subject has an Observer that implements the ConcreteObservers.
+Whenever the `NotifyDrivers()` method in the Subject is invoked, all the instances of a concrete implementation of the Observer class get updated via their update function.
+
+- The loosely coupled designs allow us to build a flexible object-oriented delivery notification system that can push
+  updates and handle changes because they have reduced the interdependency level between objects
+
+- The separation of the Subject and ConcreteSubject classes allows for future extensibility.
+The Shop stores a list of customers and orders, and getter/setter methods relating to them. It also has a `NotifyCustomers` method that enables it to notify its customers of delivery status updates. 
 
 # UML Class Diagram
 
-![Class Diagram](assignment2_uml.jpg)
+![Class Diagram](assignment2_uml_without_dependencies.png)
+
+![Class Diagram](assignment2_uml.png)
 
 # How to compile the project
 

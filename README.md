@@ -20,14 +20,19 @@ ConcreteObserver: Customer, Driver
 - This kind of interaction in observer pattern is also known as publish-subscribe (Pub/Sub).
 Whenever there are any updates, we push the new events from the publisher to subscribers.
 
-- The Subject has an Observer that implements the ConcreteObservers.
-Whenever the `NotifyDrivers()` method in the Subject is invoked, all the instances of a concrete implementation of the Observer class get updated via their update function.
+- The Subject has an Observer that implements the ConcreteObservers, the Customer and the Driver.
+Whenever the `NotifyDrivers()` method in the Subject is invoked, all the instances of a concrete implementation of the Observer class are updated via their `update` methods.
+When this happens, the Driver and the Customer save the latest delivery request in their states. 
 
 - The loosely coupled designs allow us to build a flexible object-oriented delivery notification system that can push
   updates and handle changes because they have reduced the interdependency level between objects
 
 - The separation of the Subject and ConcreteSubject classes allows for future extensibility.
-The Shop stores a list of customers and orders, and getter/setter methods relating to them. It also has a `NotifyCustomers` method that enables it to notify its customers of delivery status updates. 
+The Subject, DeliverySystem, stores a list of drivers and lets users add, remove, and get drivers.
+The ConcreteSubject, Shop, stores a list of customers and orders, and getter/setter methods relating to them. It also has a `NotifyCustomers` method that enables it to notify its customers of delivery status updates.
+
+- The ConcreteObserver, Driver, has an `acceptDeliveryRequest` method that lets it change the DeliveryStatus of the order, from the initial state `PENDING` to `OUT_FOR_DELIVERY`.
+Methods that would prove useful in the future are included in the DeliveryStatus enum class, such as `FAILED ATTEMPT` and `DELIVERED`. 
 
 # UML Class Diagram
 
